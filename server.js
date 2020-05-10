@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 let mattText = "Placeholder Message";
 
@@ -31,7 +33,7 @@ app.get("/users/rayanne", function (req, res) {
 app.post("/users/matt/sendMessage", function (req, res) {
   mattText = req.query.message;
   console.log("Setting matt's text to ")
-  console.log(req.query.message)
+  console.log(req.body)
 });
 
 app.listen(process.env.PORT || 5000);
