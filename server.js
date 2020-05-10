@@ -31,7 +31,7 @@ app.get("/users/rayanne", function (req, res) {
 });
 
 app.post("/users/matt/sendMessage", function (req, res) {
-  mattText = req.query.message;
+  mattText = req.body;
   console.log("Setting matt's text to ")
   console.log(req.body)
 });
