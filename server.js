@@ -1,10 +1,10 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-let mattText = "Placeholder Message";
+let mattText = {"id": -1, "message": "Placeholder Message"};
 
 app.use(function (req, res, next) {
   express.json();
@@ -32,8 +32,8 @@ app.get("/users/rayanne", function (req, res) {
 
 app.post("/users/matt/sendMessage", function (req, res) {
   mattText = req.body;
-  console.log("Setting matt's text to ")
-  console.log(req.body)
+  console.log("Setting matt's text to ");
+  console.log(req.body);
 });
 
 app.listen(process.env.PORT || 5000);
