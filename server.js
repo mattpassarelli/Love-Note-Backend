@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-let mattText = {"id": -1, "message": "Placeholder Message"};
+let mattText = {"id": 0, "message": "Placeholder Message"};
 
 app.use(function (req, res, next) {
   express.json();
