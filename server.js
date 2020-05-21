@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 let mattText = {"id": 0, "message": "Placeholder Message"};
+let rayanneText = {"id": 0, "message": "Placeholder Message"};
 
 app.use(function (req, res, next) {
   express.json();
@@ -26,9 +27,16 @@ app.get("/users/matt/getMessage", function (req, res) {
   res.send(mattText);
 });
 
-app.get("/users/rayanne", function (req, res) {
-  res.send("You are Rayanne");
+app.get("/users/rayanne/getMessage", function (req, res) {
+  res.send(rayanneText);
 });
+
+app.post("/users/matt/sendMessage", function (req, res) {
+  rayanneText = req.body;
+  console.log("Setting Rayanne's text to ");
+  console.log(req.body);
+});
+
 
 app.post("/users/matt/sendMessage", function (req, res) {
   mattText = req.body;
