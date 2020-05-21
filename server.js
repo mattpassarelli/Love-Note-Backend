@@ -31,7 +31,7 @@ app.get("/users/rayanne/getMessage", function (req, res) {
   res.send(rayanneText);
 });
 
-app.post("/users/matt/sendMessage", function (req, res) {
+app.post("/users/rayanne/sendMessage", function (req, res) {
   rayanneText = req.body;
   console.log("Setting Rayanne's text to ");
   console.log(req.body);
